@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300&display=swap');
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Martel Sans', sans-serif;
+}
+
+.form-container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #1B1C24;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    color: black;
+    background-color: #D5D7DE;
+}
+
+input:focus {
+    outline: 3px solid #717790;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #5ECF73;
+}
+
+button:hover {
+    background-color: #00984d;
+    color: #fff;
+}
+
+#userInput, #passwordInput {
+    margin-bottom: 10px;
+}
+
+#userError, #passwordError {
+    font-size: 15px;
+    color: #e63946;
+}
+
+#loginBtn {
+    margin-top: 10px;
+}
+
+.removeFadeOut {
+    animation: fadeOut ease 1s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+

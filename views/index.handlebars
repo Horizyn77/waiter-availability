@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiter Availability</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+                <label for="">Username</label>
+                <input type="text" name="username" id="userInput">
+                <div id="userError">
+                    {{#if messages.user}}
+                    {{messages.user}}
+                    {{/if}}
+                    </div>
+                <label for="">Password</label>
+                <input type="password" name="password" id="passwordInput">
+                <div id="passwordError">
+                    {{#if messages.password}}
+                    {{messages.password}}
+                    {{/if}}
+                </div>
+                <button type="submit" id="loginBtn">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/waiter.js"></script>
+</html>
