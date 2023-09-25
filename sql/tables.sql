@@ -10,7 +10,7 @@ CREATE TABLE days (
     day VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE assignments (
+CREATE TABLE shifts (
     waiters_id INT REFERENCES waiters(id),
     days_id INT REFERENCES days(id),
     PRIMARY KEY (waiters_id, days_id)

@@ -6,32 +6,12 @@
         <h1>Waiter Availability</h1>
         <ul class="nav-ul">
             <li id="demo-login-btn">Demo Login Details</li>
-            <li id="login-btn">Login</li>
-            <li id="sign-up-btn"><a href="/register" id="sign-up-link">Sign Up</a></li>
+            <li id="login-btn"><a href="/" id="login-link">Login</a></li>
+            <li id="sign-up-btn">Sign Up</li>
         </ul>
     </nav>
     <div class="container">
-        <div class="form-container" id="login-form">
-            <h1>Login</h1>
-            <form action="/login" method="POST" class="login-form">
-                <label for="">Username</label>
-                <input type="text" name="username" id="userInput">
-                <div id="userError">
-                    {{#if messages.user}}
-                    {{messages.user}}
-                    {{/if}}
-                </div>
-                <label for="">Password</label>
-                <input type="password" name="password" id="passwordInput">
-                <div id="passwordError">
-                    {{#if messages.password}}
-                    {{messages.password}}
-                    {{/if}}
-                </div>
-                <button type="submit" id="loginBtn">Login</button>
-            </form>
-        </div>
-        <div class="form-container" id="sign-up-form" style="display:none;">
+        <div class="form-container" id="sign-up-form"ss>
             <h1>Sign Up</h1>
             <form action="/register" method="POST" class="login-form">
                 <label for="">Username</label>
@@ -50,7 +30,7 @@
                 </div>
                 <div>
                     <label for="admin-sign-up">
-                        <input type="checkbox" id="admin-sign-up">
+                        <input type="checkbox" id="admin-sign-up"  name="adminCheck">
                         Sign up as an administrator
                     </label>
                 </div>

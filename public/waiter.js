@@ -1,16 +1,10 @@
-const userError = document.querySelector("#userError");
-const passwordError = document.querySelector("#passwordError");
+const submitSuccessMessage = document.querySelector("#submit-success-msg");
 
-userError.style.display = "block";
-passwordError.style.display = "block";
-
-if (userError.innerText !== "" || passwordError.innerText !== "") {
+if (submitSuccessMessage.innerText !== "") {
     setTimeout(() => {
-        userError.classList.add("removeFadeOut")
-        passwordError.classList.add("removeFadeOut")
+        submitSuccessMessage.classList.add("removeFadeOut")
         setTimeout(() => {
-            userError.style.display = "none";
-            passwordError.style.display = "none";
-        }, 800)
+            submitSuccessMessage.innerText = ""
+        }, 1000)
     }, 3000)
 }

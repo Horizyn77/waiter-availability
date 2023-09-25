@@ -1,1 +1,67 @@
-<h1>Logged In</h1>
+<div class="waiter-bg-image">
+    <nav class="nav-waiter-admin">
+        <div class="image-icon">
+            <img src="/images/icon.png" alt="">
+        </div>
+        <h1>Waiter Availability</h1>
+    </nav>
+    <div class="container">
+        <div class="waiter-container">
+            <h1>Hello, {{username}}</h1>
+            <div id="current-shift-heading">Your current weekly shift is</div>
+            <div class="current-shift-days">
+                {{#if shiftDays.length}}
+                {{#each shiftDays}}
+                <div class="shift-day">{{this}}</div>
+                {{/each}}
+                {{else}}
+                <div class="shift-set-error">Weekly shift has not been set</div>
+                {{/if}}
+            </div>
+            <div id="set-shift-heading">Set your weekly shifts</div>
+            <div class="select-shift">
+                <form action="/waiter/{{username}}" method="POST">
+                    <div class="shift-days">
+                        <label for="monday">
+                            <input type="checkbox" id="monday" name="Monday" {{#if
+                                checkedDays.mondayCheck}}checked{{/if}}>
+                            Monday
+                        </label>
+                        <label for="tuesday">
+                            <input type="checkbox" id="tuesday" name="Tuesday" {{#if
+                                checkedDays.tuesdayCheck}}checked{{/if}}>
+                            Tuesday
+                        </label>
+                        <label for="wednesday">
+                            <input type="checkbox" id="wednesday" name="Wednesday" {{#if
+                                checkedDays.wednesdayCheck}}checked{{/if}}>
+                            Wednesday
+                        </label>
+                        <label for="thursday">
+                            <input type="checkbox" id="thursday" name="Thursday" {{#if
+                                checkedDays.thursdayCheck}}checked{{/if}}>
+                            Thursday
+                        </label>
+                        <label for="friday">
+                            <input type="checkbox" id="friday" name="Friday" {{#if
+                                checkedDays.fridayCheck}}checked{{/if}}>
+                            Friday
+                        </label>
+                    </div>
+                    <div class="submit-msg-center">
+                        <div id="submit-success-msg">
+                            {{#if messages.success}}
+                            {{{messages.success}}}
+                            {{/if}}
+                        </div>
+                    </div>
+                    <button type="submit" id="submit-button">Submit</button>
+                </form>
+                <form action="/logout" method="POST">
+                    <button id="logout-btn" type="submit">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/waiter.js"></script>

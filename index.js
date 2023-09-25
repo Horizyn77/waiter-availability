@@ -5,8 +5,9 @@ import flash from "express-flash";
 import 'dotenv/config';
 import pgPromise from 'pg-promise';
 
-import WaiterService  from "./services/waiter-service.js";
+import WaiterService from "./services/waiter-service.js";
 import WaiterRoutes from "./routes/waiter-routes.js"
+import APIRoutes from "./api/api-routes.js"
 
 const app = express();
 const pgp = pgPromise({});
@@ -40,11 +41,30 @@ app.use(flash());
 
 const waiterService = WaiterService(db);
 const waiterRoutes = WaiterRoutes(waiterService);
+const apiRoutes = APIRoutes(waiterService);
 
 app.get("/", waiterRoutes.showHome)
 
 app.post("/login", waiterRoutes.loginUser)
 
-app.get("/waiter/:username", waiterRoutes.waiterPage)
+app.get("/waiter/:username", waiterRoutes.showWaiterPage)
+
+app.post("/waiter/:username", waiterRoutes.submitWaiterPage)
+
+app.get("/days", waiterRoutes.adminPage)
+
+app.get("/api/waiters", apiRoutes.getWaitersList)
+
+app.get("/api/data/waiters", apiRoutes.getWaitersByDay)
+
+app.get("/api/data/days", apiRoutes.getDaysByWaiter)
+
+app.post("/reset", waiterRoutes.resetData)
+
+app.post("/logout", waiterRoutes.logoutUser)
+
+app.get("/register", waiterRoutes.signUpPage)
+
+app.post("/register", waiterRoutes.signUpUser)
 
 app.listen(PORT, () => console.log(`Server started at Port: ${PORT}`));

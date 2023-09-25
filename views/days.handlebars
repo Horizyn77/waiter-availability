@@ -1,0 +1,65 @@
+<div class="waiter-bg-image">
+    <nav class="nav-waiter-admin">
+        <div class="image-icon">
+            <img src="/images/icon.png" alt="">
+        </div>
+        <h1>Waiter Availability</h1>
+    </nav>
+    <div class="container">
+        <div class="admin-container">
+            <h1>Welcome, Administrator</h1>
+            <div id="shifts-current-week-center">
+                <div id="shifts-current-week">Shifts for the current week</div>
+            </div>
+            <div>
+                <img src="{{dataUrl}}" alt="waiter weekly shifts chart">
+            </div>
+            <div id="statistics-heading-center">
+                <div id="statistics-heading">Statistics</div>
+            </div>
+            <button id="view-waiters-data-btn">View Waiters Available By Day</button>
+            <div class="waiters-data">
+                <div class="waiters-data-btns-center">
+                    <div class="waiters-data-btns">
+                        <span class="active-default-btn">Monday</span>
+                        <span>Tuesday</span>
+                        <span>Wednesday</span>
+                        <span>Thursday</span>
+                        <span>Friday</span>
+                    </div>
+                </div>
+                <div class="waiters-table-center">
+                </div>
+            </div>
+            <button id="view-days-data-btn">View Days Available By Waiter</button>
+            <div class="days-data">
+                <div class="days-data-btns-center">
+                    <div class="days-data-btns">
+                    </div>
+                </div>
+                <div class="days-table-center">
+                </div>
+            </div>
+            <div id="account-heading-center">
+                <div id="account-heading">Account</div>
+            </div>
+            <div class="submit-msg-center reset-msg">
+                <div id="submit-success-msg">
+                    {{#if messages.success}}
+                    {{{messages.success}}}
+                    {{/if}}
+                </div>
+            </div>
+            <form action="/reset" method="POST">
+                <button id="reset-data-btn" type="submit">Reset Weekly Data</button>
+            </form>
+            <form action="/logout" method="POST">
+                <button id="logout-btn">Logout</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/slideToggle.min.js"></script>
+<script src="/admin.js"></script>
