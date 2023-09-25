@@ -108,6 +108,16 @@ button:hover {
     color: #fff;
 }
 
+.waiter-container h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.admin-container h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 .shift-days {
     display: flex;
     margin-bottom: 0;
@@ -299,7 +309,7 @@ nav {
 }
 
 .nav-homepage h1 {
-    margin-right: 340px;
+    margin-right: 372px;
     font-size: 24px;
     margin-top: 10px;
     margin-bottom: 0;
@@ -316,6 +326,10 @@ nav {
 #sign-up-btn:hover {
     background-color: #00984d;
     color: #fff;
+}
+
+#sign-up-link {
+    color: inherit;
 }
 
 .nav-waiter-admin {

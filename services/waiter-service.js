@@ -39,7 +39,7 @@ export default function WaiterService(db) {
     }
 
     async function findUserId(username) {
-        const findUserQuery = `SELECT id FROM waiters WHERE username = $1;`
+        const findUserQuery = `SELECT id FROM waiters WHERE username = $1 AND is_admin = false`;
 
         const result = await db.one(findUserQuery, [username])
 

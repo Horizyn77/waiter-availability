@@ -132,7 +132,7 @@ export default function WaiterRoutes(waiterService) {
             checkedDays.fridayCheck = true;
         }
 
-        req.flash("success", "<img src='/images/success-mark-icon.png'>Your weekly shifts has been successfully submitted")
+        req.flash("success", "<img src='/images/success-mark-icon.png'>Your weekly shift has been successfully submitted")
 
         res.render("waiter", { username, shiftDays, checkedDays, messages: req.flash() })
 
