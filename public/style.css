@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300&display=swap');
 
-@font-face {
-    font-family: BlackChancery;
-    src: url("/fonts/BLKCHCRY.ttf");
-}
-
 body {
     padding: 0;
     margin: 0;
@@ -77,7 +72,7 @@ button:hover {
 
 #userError,
 #passwordError {
-    font-size: 15px;
+    font-size: 16px;
     color: #e63946;
 }
 
@@ -86,7 +81,7 @@ button:hover {
 }
 
 .removeFadeOut {
-    animation: fadeOut ease 1s;
+    animation: fadeOut ease 2s;
 }
 
 @keyframes fadeOut {
@@ -461,18 +456,4 @@ a:visited#sign-up-link {
 
 .submit-msg-center.reset-msg img {
     left: 100px !important;
-}
-
-.removeFadeOut {
-    animation: fadeOut ease 2s;
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
 }

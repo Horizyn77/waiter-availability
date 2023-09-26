@@ -20,7 +20,7 @@ if (userError.innerText !== "" || passwordError.innerText !== "") {
         setTimeout(() => {
             userError.style.display = "none";
             passwordError.style.display = "none";
-        }, 800)
+        }, 1000)
     }, 3000)
 }
 
@@ -38,3 +38,5 @@ loginDetailsOverlay.addEventListener("click", () => {
     loginDetailsOverlay.classList.add("hide-modal");
     loginDetailsModal.classList.add("hide-modal")
 })
+
+signUpBtn.addEventListener("click")
