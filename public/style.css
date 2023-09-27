@@ -457,3 +457,11 @@ a:visited#sign-up-link {
 .submit-msg-center.reset-msg img {
     left: 100px !important;
 }
+
+.container {
+    transform: scale(67%);
+}
+
+nav {
+    zoom: 67%;
+}
