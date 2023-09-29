@@ -9,6 +9,21 @@ if (submitSuccessMessage.innerText !== "") {
     }, 3000)
 }
 
+const viewShiftsBtn = document.querySelector("#view-shifts-btn")
+const shiftsChart = document.querySelector("#shifts-chart")
+
+viewShiftsBtn.addEventListener("click", () => {
+    shiftsChart.slideToggle();
+    shiftsChart.style.display = "block";
+
+    if (viewShiftsBtn.innerText !== "Close") {
+        viewShiftsBtn.innerText = "Close";
+    } else {
+        viewShiftsBtn.innerText = "View Shifts";
+    }
+})
+
+
 const viewWaitersDataBtn = document.querySelector("#view-waiters-data-btn");
 const viewDaysDataBtn = document.querySelector("#view-days-data-btn");
 const daysDataBtnsContainer = document.querySelector(".days-data-btns")

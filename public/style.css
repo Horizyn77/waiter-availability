@@ -349,7 +349,8 @@ nav {
     align-items: center;
 }
 
-#demo-login-btn:hover, #login-btn:hover {
+#demo-login-btn:hover,
+#login-btn:hover {
     color: #0077b6;
 }
 
@@ -392,7 +393,9 @@ nav {
     display: none;
 }
 
-.login-details-modal table, .login-details-modal tr, .login-details-modal td {
+.login-details-modal table,
+.login-details-modal tr,
+.login-details-modal td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -416,7 +419,9 @@ nav {
     padding-left: 18px;
 }
 
-.demo-table tr, .demo-table td, .demo-table th {
+.demo-table tr,
+.demo-table td,
+.demo-table th {
     padding: 6px 8px;
 }
 
@@ -428,7 +433,7 @@ a {
     text-decoration: none;
 }
 
- a:visited#login-link {
+a:visited#login-link {
     color: inherit;
 }
 
@@ -464,4 +469,24 @@ a:visited#sign-up-link {
 
 nav {
     zoom: 67%;
+}
+
+.waiter-container {
+    transform: scale(135%);
+}
+
+.form-container {
+    transform: scale(125%);
+}
+
+#view-shifts-btn {
+    width: 100%;
+}
+
+#shifts-chart {
+    display: none;
+}
+
+#account-heading {
+    margin-top: 10px;
 }
