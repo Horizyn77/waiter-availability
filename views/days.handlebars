@@ -20,6 +20,10 @@
                         <span>Wednesday</span>
                         <span>Thursday</span>
                         <span>Friday</span>
+                        <br>
+                        <br>
+                        <span>Saturday</span>
+                        <span>Sunday</span>
                     </div>
                 </div>
                 <div class="waiters-table-center">
@@ -40,6 +44,17 @@
             <button id="view-shifts-btn">View Shifts</button>
             <div id="shifts-chart">
                 <img src="{{dataUrl}}" alt="waiter weekly shifts chart">
+                <div class="legend">
+                    <span><span id="enough-waiters"></span>
+                        Enough
+                    </span>
+                    <span><span id="not-enough-waiters"></span>
+                        Not Enough
+                    </span>
+                    <span><span id="more-than-enough-waiters"></span>
+                        More Than Enough
+                    </span>
+                </div>
             </div>
             <div id="account-heading-center">
                 <div id="account-heading">Account</div>

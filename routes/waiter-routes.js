@@ -58,7 +58,9 @@ export default function WaiterRoutes(waiterService) {
             tuesdayCheck: false,
             wednesdayCheck: false,
             thursdayCheck: false,
-            fridayCheck: false
+            fridayCheck: false,
+            saturdayCheck: false,
+            sundayCheck: false
         }
 
         if (shiftDays.includes("Monday")) {
@@ -75,6 +77,12 @@ export default function WaiterRoutes(waiterService) {
         }
         if (shiftDays.includes("Friday")) {
             checkedDays.fridayCheck = true;
+        }
+        if (shiftDays.includes("Saturday")) {
+            checkedDays.saturdayCheck = true;
+        }
+        if (shiftDays.includes("Sunday")) {
+            checkedDays.sundayCheck = true;
         }
 
         res.render("waiter", { username, shiftDays, checkedDays })
@@ -113,7 +121,9 @@ export default function WaiterRoutes(waiterService) {
             tuesdayCheck: false,
             wednesdayCheck: false,
             thursdayCheck: false,
-            fridayCheck: false
+            fridayCheck: false,
+            saturdayCheck: false,
+            sundayCheck: false
         }
 
         if (shiftDays.includes("Monday")) {
@@ -131,6 +141,13 @@ export default function WaiterRoutes(waiterService) {
         if (shiftDays.includes("Friday")) {
             checkedDays.fridayCheck = true;
         }
+        if (shiftDays.includes("Saturday")) {
+            checkedDays.saturdayCheck = true;
+        }
+        if (shiftDays.includes("Sunday")) {
+            checkedDays.sundayCheck = true;
+        }
+
 
         req.flash("success", "<img src='/images/success-mark-icon.png'>Your weekly shift has been successfully submitted")
 
@@ -145,7 +162,9 @@ export default function WaiterRoutes(waiterService) {
             await waiterService.getWaitersAvailablePerDay("Tuesday"),
             await waiterService.getWaitersAvailablePerDay("Wednesday"),
             await waiterService.getWaitersAvailablePerDay("Thursday"),
-            await waiterService.getWaitersAvailablePerDay("Friday")
+            await waiterService.getWaitersAvailablePerDay("Friday"),
+            await waiterService.getWaitersAvailablePerDay("Saturday"),
+            await waiterService.getWaitersAvailablePerDay("Sunday")
         ]
 
         const barColors = waiterWeeklyData.map(item => {
@@ -161,7 +180,7 @@ export default function WaiterRoutes(waiterService) {
         const configuration = {
             type: "bar",
             data: {
-                labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                 datasets: [{
                     label: "Waiters Available",
                     backgroundColor: barColors,
@@ -198,7 +217,9 @@ export default function WaiterRoutes(waiterService) {
             await waiterService.getWaitersAvailablePerDay("Tuesday"),
             await waiterService.getWaitersAvailablePerDay("Wednesday"),
             await waiterService.getWaitersAvailablePerDay("Thursday"),
-            await waiterService.getWaitersAvailablePerDay("Friday")
+            await waiterService.getWaitersAvailablePerDay("Friday"),
+            await waiterService.getWaitersAvailablePerDay("Saturday"),
+            await waiterService.getWaitersAvailablePerDay("Sunday")
         ]
 
         const barColors = waiterWeeklyData.map(item => {
@@ -214,7 +235,7 @@ export default function WaiterRoutes(waiterService) {
         const configuration = {
             type: "bar",
             data: {
-                labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                 datasets: [{
                     label: "Waiters Available",
                     backgroundColor: barColors,

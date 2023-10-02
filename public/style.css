@@ -490,3 +490,30 @@ nav {
 #account-heading {
     margin-top: 10px;
 }
+
+#enough-waiters, #not-enough-waiters, #more-than-enough-waiters {
+    width: 30px;
+    height: 16px;
+    display: inline-block;
+}
+
+#enough-waiters {
+    background-color: #069C56;
+}
+
+#not-enough-waiters {
+    background-color: #CC5050;
+}
+
+#more-than-enough-waiters {
+    background-color: #FFB443;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+}
+
+.legend>span {
+    margin-right: 30px;
+}
