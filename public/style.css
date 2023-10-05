@@ -409,7 +409,6 @@ nav {
     background-color: #003566;
     color: white;
     margin-top: 0;
-    border-bottom: 1px solid black;
     margin-bottom: 0;
     padding-left: 10px;
     font-weight: normal;
@@ -463,21 +462,7 @@ a:visited#sign-up-link {
     left: 100px !important;
 }
 
-.container {
-    transform: scale(67%);
-}
 
-nav {
-    zoom: 67%;
-}
-
-.waiter-container {
-    transform: scale(135%);
-}
-
-.form-container {
-    transform: scale(125%);
-}
 
 #view-shifts-btn {
     width: 100%;
@@ -491,7 +476,9 @@ nav {
     margin-top: 10px;
 }
 
-#enough-waiters, #not-enough-waiters, #more-than-enough-waiters {
+#enough-waiters,
+#not-enough-waiters,
+#more-than-enough-waiters {
     width: 30px;
     height: 16px;
     display: inline-block;
@@ -516,4 +503,24 @@ nav {
 
 .legend>span {
     margin-right: 30px;
+}
+
+@media (max-width: 1366px) and (max-height: 768px) {
+    .container {
+        transform: scale(67%);
+    }
+
+    nav {
+        zoom: 67%;
+    }
+
+    .waiter-container {
+        transform: scale(135%);
+
+    }
+
+    .form-container {
+        transform: scale(125%);
+
+    }
 }
