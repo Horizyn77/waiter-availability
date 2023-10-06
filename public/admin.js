@@ -80,7 +80,6 @@ async function showWaitersListBtns() {
 
 showWaitersListBtns()
 
-
 viewWaitersDataBtn.addEventListener("click", () => {
     waiterData.slideToggle();
     waiterData.style.display = "block";
