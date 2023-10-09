@@ -6,9 +6,6 @@ const demoLoginDetailsBtn = document.querySelector("#demo-login-btn")
 const loginDetailsOverlay = document.querySelector(".login-details-overlay")
 const loginForm = document.querySelector("#login-form");
 const signUpForm = document.querySelector("#sign-up-form");
-const loginBtn = document.querySelector("#login-btn");
-const signUpBtn = document.querySelector("#sign-up-btn");
-
 
 userError.style.display = "block";
 passwordError.style.display = "block";
@@ -38,5 +35,3 @@ loginDetailsOverlay.addEventListener("click", () => {
     loginDetailsOverlay.classList.add("hide-modal");
     loginDetailsModal.classList.add("hide-modal")
 })
-
-signUpBtn.addEventListener("click")

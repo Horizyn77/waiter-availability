@@ -4,6 +4,7 @@ import session from "express-session";
 import flash from "express-flash";
 import 'dotenv/config';
 import pgPromise from 'pg-promise';
+import cookieParser from "cookie-parser";
 
 import WaiterService from "./services/waiter-service.js";
 import WaiterRoutes from "./routes/waiter-routes.js"
@@ -38,6 +39,7 @@ app.use(session({
 }))
 
 app.use(flash());
+app.use(cookieParser());
 
 const waiterService = WaiterService(db);
 const waiterRoutes = WaiterRoutes(waiterService);
@@ -47,11 +49,11 @@ app.get("/", waiterRoutes.showHome)
 
 app.post("/login", waiterRoutes.loginUser)
 
-app.get("/waiter/:username", waiterRoutes.showWaiterPage)
+app.get("/waiter/:username", waiterRoutes.auth, waiterRoutes.showWaiterPage)
 
 app.post("/waiter/:username", waiterRoutes.submitWaiterPage)
 
-app.get("/days", waiterRoutes.adminPage)
+app.get("/days", waiterRoutes.auth, waiterRoutes.adminPage)
 
 app.get("/api/waiters", apiRoutes.getWaitersList)
 

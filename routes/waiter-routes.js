@@ -1,6 +1,7 @@
 import { ChartJSNodeCanvas } from "chartjs-node-canvas";
 const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: 600, height: 300 });
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 export default function WaiterRoutes(waiterService) {
     function showHome(req, res) {
@@ -32,6 +33,8 @@ export default function WaiterRoutes(waiterService) {
             }
             const adminCheckResult = await waiterService.isAdmin(username);
 
+            const maxAge = 1 * 24 * 60 * 60;
+
             if (!userCheckResult) {
                 req.flash("user", "User does not exist")
                 res.render("index", { messages: req.flash() })
@@ -39,8 +42,16 @@ export default function WaiterRoutes(waiterService) {
                 req.flash("password", "Password is incorrect")
                 res.render("index", { messages: req.flash() })
             } else if (userCheckResult && passwordHashCheckResult && !adminCheckResult) {
+                const token = jwt.sign({ username, isAdmin: false }, "waiter availability secret", {
+                    expiresIn: maxAge
+                })
+                res.cookie(`jwt_${username}`, token, { httpOnly: true, maxAge: maxAge * 1000 })
                 res.redirect(`/waiter/${username}`)
             } else if (userCheckResult && passwordHashCheckResult && adminCheckResult) {
+                const token = jwt.sign({ username, isAdmin: true }, "waiter availability secret", {
+                    expiresIn: maxAge
+                })
+                res.cookie(`jwt_admin`, token, { httpOnly: true, maxAge: maxAge * 1000 })
                 res.redirect("/days")
             }
         }
@@ -204,7 +215,7 @@ export default function WaiterRoutes(waiterService) {
 
         const dataUrl = await chartJSNodeCanvas.renderToDataURL(configuration);
 
-        res.render("days", { dataUrl })
+        res.render("days", { dataUrl, username: "admin" })
     }
 
     async function resetData(req, res) {
@@ -264,6 +275,9 @@ export default function WaiterRoutes(waiterService) {
     }
 
     async function logoutUser(req, res) {
+        const username = req.query.name;
+
+        res.cookie(`jwt_${username}`, '', { maxAge: 1})
         res.redirect("/")
     }
 
@@ -300,6 +314,13 @@ export default function WaiterRoutes(waiterService) {
 
                 await waiterService.createUserAccount(username, hashedPassword, isAdmin);
 
+                const maxAge = 1 * 24 * 60 * 60;
+
+                const token = jwt.sign({ username, isAdmin: false }, "waiter availability secret", {
+                    expiresIn: maxAge
+                })
+                res.cookie(`jwt_${username}`, token, { httpOnly: true, maxAge: maxAge * 1000 })
+
                 if (isAdmin) {
                     res.redirect("/days")
                 } else if (!isAdmin) {
@@ -313,6 +334,32 @@ export default function WaiterRoutes(waiterService) {
         res.render("register")
     }
 
+    function auth(req, res, next) {
+
+        const username = req.params.username;
+        let jwtName;
+
+        if (username) {
+            jwtName = `jwt_${username}`
+        } else {
+            jwtName = `jwt_admin`
+        }
+        const token  = req.cookies[jwtName];
+    
+        if (token) {
+            jwt.verify(token, "waiter availability secret", (err, decodedToken) => {
+                if (err) {
+                    console.log(err.message)
+                    res.redirect("/");
+                } else {
+                    next();
+                }
+            })
+        } else {
+            res.redirect("/")
+        }
+    }
+
     return {
         showHome,
         loginUser,
@@ -322,6 +369,7 @@ export default function WaiterRoutes(waiterService) {
         resetData,
         logoutUser,
         signUpUser,
-        signUpPage
+        signUpPage,
+        auth
     }
 }

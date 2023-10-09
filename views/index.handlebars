@@ -31,32 +31,6 @@
                 <button type="submit" id="loginBtn">Login</button>
             </form>
         </div>
-        <div class="form-container" id="sign-up-form" style="display:none;">
-            <h1>Sign Up</h1>
-            <form action="/register" method="POST" class="login-form">
-                <label for="">Username</label>
-                <input type="text" name="username" id="userInput">
-                <div id="userError">
-                    {{#if messages.user}}
-                    {{messages.user}}
-                    {{/if}}
-                </div>
-                <label for="">Password</label>
-                <input type="password" name="password" id="passwordInput">
-                <div id="passwordError">
-                    {{#if messages.password}}
-                    {{messages.password}}
-                    {{/if}}
-                </div>
-                <div>
-                    <label for="admin-sign-up">
-                        <input type="checkbox" id="admin-sign-up">
-                        Sign up as an administrator
-                    </label>
-                </div>
-                <button type="submit" id="loginBtn">Sign Up</button>
-            </form>
-        </div>
     </div>
     <section class="login-details-modal hide-modal">
         <div>
