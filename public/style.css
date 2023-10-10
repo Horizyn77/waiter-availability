@@ -503,6 +503,32 @@ a:visited#sign-up-link {
     margin-left: 30px;
 }
 
+.signup-success {
+    width: 600px;
+    background-color: #1B1C24;
+    color: white;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+}
+
+.signup-success img {
+    width: 600px;
+}
+
+.signup-success a {
+    color: red;
+    text-decoration: underline;
+}
+
+.signup-success h1 {
+    margin: 0;
+}
+
+.signup-success h1:nth-child(2) {
+    margin-bottom: 14px;
+}
+
 @media (max-width: 1366px) and (max-height: 768px) {
     .container {
         transform: scale(67%);

@@ -321,11 +321,7 @@ export default function WaiterRoutes(waiterService) {
                 })
                 res.cookie(`jwt_${username}`, token, { httpOnly: true, maxAge: maxAge * 1000 })
 
-                if (isAdmin) {
-                    res.redirect("/days")
-                } else if (!isAdmin) {
-                    res.redirect(`/waiter/${username}`);
-                }
+                res.render("signup", { username })
             }
         }
     }
