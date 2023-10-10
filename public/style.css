@@ -462,8 +462,6 @@ a:visited#sign-up-link {
     left: 100px !important;
 }
 
-
-
 #view-shifts-btn {
     width: 100%;
 }
@@ -502,7 +500,7 @@ a:visited#sign-up-link {
 }
 
 .legend>span {
-    margin-right: 30px;
+    margin-left: 30px;
 }
 
 @media (max-width: 1366px) and (max-height: 768px) {
