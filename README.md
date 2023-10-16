@@ -1,5 +1,7 @@
 # Waiter Availability App ☕
 
+![Screenshot from 2023-10-16 14-40-17](https://github.com/Horizyn77/waiter-availability/assets/116552523/c3825b16-821c-4bb7-9df4-0b6bd1100cd2)
+
 Link to app 🔗:  
 
 https://waiter-availability-1kqb.onrender.com
