@@ -8,6 +8,24 @@
     <div class="container">
         <div class="admin-container">
             <h1>Welcome, Administrator</h1>
+            <div id="shifts-current-week-center">
+                <div id="shifts-current-week">Shifts for the current week</div>
+            </div>
+            <button id="view-shifts-btn">View Shifts</button>
+            <div id="shifts-chart">
+                <img src="{{dataUrl}}" alt="waiter weekly shifts chart">
+                <div class="legend">
+                    <span><span id="enough-waiters"></span>
+                        Enough
+                    </span>
+                    <span><span id="not-enough-waiters"></span>
+                        Not Enough
+                    </span>
+                    <span><span id="more-than-enough-waiters"></span>
+                        More Than Enough
+                    </span>
+                </div>
+            </div>
             <div id="statistics-heading-center">
                 <div id="statistics-heading">Statistics</div>
             </div>
@@ -36,24 +54,6 @@
                     </div>
                 </div>
                 <div class="days-table-center">
-                </div>
-            </div>
-            <div id="shifts-current-week-center">
-                <div id="shifts-current-week">Shifts for the current week</div>
-            </div>
-            <button id="view-shifts-btn">View Shifts</button>
-            <div id="shifts-chart">
-                <img src="{{dataUrl}}" alt="waiter weekly shifts chart">
-                <div class="legend">
-                    <span><span id="enough-waiters"></span>
-                        Enough
-                    </span>
-                    <span><span id="not-enough-waiters"></span>
-                        Not Enough
-                    </span>
-                    <span><span id="more-than-enough-waiters"></span>
-                        More Than Enough
-                    </span>
                 </div>
             </div>
             <div id="account-heading-center">
