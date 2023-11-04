@@ -32,7 +32,7 @@ Waiters are able to create accounts. Waiters and restaurant managers can log int
 
 ### Statistics
 
-Managers can see nice statistics and breakdown of waiters available by a particular day or see all the days a particular waiter will be available. There is also a nice colour coded bar chart reflecting when there are enough/not enough/more than enough waiters available for a particular day. For reference 3 waiters available equal enough, more than 3 equals more than enough, and less than 3 equals not enough.
+Managers can see nice statistics and breakdown of waiters available by a particular day or see all the days a particular waiter will be available. There is also a nice colour coded bar chart reflecting when there are enough/not enough/more than enough waiters available for a particular day. For reference 3 waiters available equal enough, less than 3 equals not enough and more than 3 equals more than enough.
 
 ### Form Validation
 
