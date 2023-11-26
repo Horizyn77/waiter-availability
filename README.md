@@ -40,6 +40,10 @@ There are useful error messages when logging in and signing up that notify the u
 
 ## Technologies Used 💻<a name="technologies-used"></a>
 
+#### HTML/CSS
+Used for adding the structure of elements on the page and styling
+#### Javascript
+Used for user interactivity
 #### Node.js/Express
 Used for setting up a server and handling routes and logic  
 #### Handlebars  
