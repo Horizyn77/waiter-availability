@@ -279,6 +279,11 @@ table {
     background-size: cover;
 }
 
+.waiter-admin-container {
+    height: initial;
+    min-height: 100vh !important;
+}
+
 .nav-ul {
     list-style-type: none;
     margin: 0;
