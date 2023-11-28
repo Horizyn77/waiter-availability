@@ -6,7 +6,7 @@ Link to app 🔗:
 
 https://waiter-availability-1kqb.onrender.com
 
-Please note the app is using a free hosting account on Render.com which has limitations. To speed up the loading process open the site and reload it again.
+Please note the app is using a free hosting account on Render.com which has limitations. To speed up the loading process open and then close the site and reload it again a few times.
 
 ## Table of contents
 
